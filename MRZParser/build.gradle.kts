@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "io.vladyslavv_ua"
-version = "0.1-SNAPSHOT"
+version = "0.0.2"
 
 
 tasks.jar {
@@ -43,11 +43,11 @@ publishing {
             }
         }
     }
-//    publications {
-//        gpr(MavenPublication) {
-//            from(components.java)
-//        }
-//    }
+    publications {
+        register<MavenPublication>("gpr") {
+            from(components["java"])
+        }
+    }
 }
 
 dependencies {

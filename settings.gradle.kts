@@ -4,4 +4,4 @@ plugins {
 
 rootProject.name = "MRZParser"
 include("src")
-include("lib")
+include("MRZParser")
