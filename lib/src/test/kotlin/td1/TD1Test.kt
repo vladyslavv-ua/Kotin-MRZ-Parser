@@ -20,5 +20,4 @@ class TD1Test {
             )
         assertEquals("ID", mrzParser.doc)
     }
-
 }
