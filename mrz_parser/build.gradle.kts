@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "io.vladyslavv_ua"
-version = "0.0.2"
+version = "0.3.1"
 
 
 tasks.jar {
@@ -37,9 +37,9 @@ publishing {
             name = "Kotin-MRZ-Parser"
             url = uri("https://maven.pkg.github.com/vladyslavv-ua/Kotin-MRZ-Parser")
             credentials {
-                username = githubProperties.get("gpr.usr") as String? ?: System.getenv("GPR_USER")
+                username = githubProperties["gpr.usr"] as String? ?: System.getenv("GPR_USER")
                 password =
-                    githubProperties.get("gpr.key") as String? ?: System.getenv("GPR_API_KEY")
+                    githubProperties["gpr.key"] as String? ?: System.getenv("GPR_API_KEY")
             }
         }
     }

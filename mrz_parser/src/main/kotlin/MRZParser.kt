@@ -68,16 +68,17 @@ class MRZParser(var mrz: String, var format: MRZFormat? = null) {
     }
 
 
-    companion object{
+    companion object {
         fun prepare(mrz: String): String {
             var newMrz = mrz.replace("«", "<<")
             newMrz = newMrz.replace(" ", "")
             newMrz = newMrz.replace("\n", "")
             return newMrz
         }
+
         fun parse(mrz: String, format: MRZFormat): MRZData {
             val preparedMrz = this.prepare(mrz)
-            if (format.validate(preparedMrz)){
+            if (format.validate(preparedMrz)) {
                 return format.parse(preparedMrz)
             }
             throw IllegalArgumentException()
